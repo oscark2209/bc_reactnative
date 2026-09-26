@@ -8,22 +8,8 @@ Proyecto móvil desarrollado en **React Native**, **Expo SDK 57**, **React Navig
 
 La aplicación integra una capa de comunicación HTTP centralizada con **Axios** y gestión de estado asíncrono con **TanStack Query v5** (`useQuery`, `useMutation`), manteniendo el estado de favoritos en **Zustand** y la navegación híbrida (Bottom Tabs + Nested Stack).
 
-```mermaid
-graph TD
-    App[App.tsx - QueryClientProvider] --> NavContainer[NavigationContainer - DarkTheme]
-    NavContainer --> TabNav[Bottom Tab Navigator]
-    
-    TabNav -->|Tab 1: musical-notes| HomeStack[HomeStackNavigator]
-    TabNav -->|Tab 2: bookmark con Badge| SavedScreen[SavedScreen]
-    
-    HomeStack -->|Ruta Inicial| HomeScreen[HomeScreen - useItems useQuery]
-    HomeStack -->|navigation.navigate 'Detail', { instrument }| DetailScreen[DetailScreen - Ficha Técnica]
-    HomeStack -->|navigation.navigate 'Create'| CreateScreen[CreateScreen - useCreateItem useMutation]
-    
-    HomeScreen -->|GET /posts| AxiosAPI[Axios api.ts Centralizado]
-    CreateScreen -->|POST /posts| AxiosAPI
-    CreateScreen -.->|onSuccess: invalidateQueries 'items'| HomeScreen
-```
+
+
 
 ### 1. Proveedor de Red y Servicios (`src/services/api.ts`)
 - Instancia centralizada de **Axios** con `baseURL` configurada, timeout de red y headers predeterminados.
