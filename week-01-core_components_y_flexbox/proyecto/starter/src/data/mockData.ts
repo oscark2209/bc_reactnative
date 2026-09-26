@@ -1,0 +1,126 @@
+// src/data/mockData.ts
+import { Instrument, Student, Teacher } from '../types';
+
+export const TEACHERS_MOCK: Teacher[] = [
+  {
+    id: 't1',
+    name: 'Mtra. Clara Schumann',
+    specialty: 'Piano y Teclados',
+    email: 'clara.schumann@musica.edu',
+    department: 'Cátedra de Teclados',
+  },
+  {
+    id: 't2',
+    name: 'Prof. Andrés Segovia',
+    specialty: 'Cuerdas Frotadas y Pulsadas',
+    email: 'andres.segovia@musica.edu',
+    department: 'Cátedra de Cuerdas',
+  },
+  {
+    id: 't3',
+    name: 'Mtro. Miles Davis',
+    specialty: 'Vientos y Ensamble Jazz',
+    email: 'miles.davis@musica.edu',
+    department: 'Cátedra de Vientos',
+  },
+  {
+    id: 't4',
+    name: 'Prof. Evelyn Glennie',
+    specialty: 'Percusión Sinfónica y Moderna',
+    email: 'evelyn.glennie@musica.edu',
+    department: 'Cátedra de Percusión',
+  },
+];
+
+export const STUDENTS_MOCK: Student[] = [
+  {
+    id: 's1',
+    name: 'Sofía Ramírez',
+    level: 'Intermedio',
+    matricula: 'EST-2024-041',
+  },
+  {
+    id: 's2',
+    name: 'Mateo Hernández',
+    level: 'Avanzado',
+    matricula: 'EST-2023-019',
+  },
+  {
+    id: 's3',
+    name: 'Valentina Gómez',
+    level: 'Iniciación',
+    matricula: 'EST-2025-088',
+  },
+];
+
+export const INSTRUMENTS_MOCK: Instrument[] = [
+  {
+    id: 'inst-1',
+    name: 'Piano de Cola Yamaha C3X',
+    family: 'Teclado',
+    level: 'Avanzado',
+    status: 'Disponible',
+    imageUrl: 'https://images.unsplash.com/photo-1520523839898-507127b3706e?w=800&auto=format&fit=crop&q=80',
+    description: 'Piano acústico de cola de 186 cm con resonancia brillante y mecanismo de doble escape para repertorio clásico y contemporáneo.',
+    roomLocation: 'Aula 201 - Auditorio Principal',
+    responsibleTeacher: TEACHERS_MOCK[0],
+  },
+  {
+    id: 'inst-2',
+    name: 'Violín de Concierto 4/4',
+    family: 'Cuerda',
+    level: 'Intermedio',
+    status: 'Asignado',
+    imageUrl: 'https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?w=800&auto=format&fit=crop&q=80',
+    description: 'Instrumento fabricado en abeto macizo y arce flameado. Incluye arco de pernambuco y estuche térmico rígido.',
+    roomLocation: 'Aula 104 - Cuerdas Frotadas',
+    responsibleTeacher: TEACHERS_MOCK[1],
+    assignedStudent: STUDENTS_MOCK[0],
+  },
+  {
+    id: 'inst-3',
+    name: 'Saxofón Alto Yamaha YAS-280',
+    family: 'Viento-Madera',
+    level: 'Iniciación',
+    status: 'Disponible',
+    imageUrl: 'https://images.unsplash.com/photo-1525994886773-080587e161c2?w=800&auto=format&fit=crop&q=80',
+    description: 'Diseño ergonómico ideal para estudiantes en fase de técnica embocadura e iniciación a ensambles de cámara y jazz.',
+    roomLocation: 'Aula 108 - Cátedra de Vientos',
+    responsibleTeacher: TEACHERS_MOCK[2],
+  },
+  {
+    id: 'inst-4',
+    name: 'Batería Acústica Pearl Export',
+    family: 'Percusión',
+    level: 'Intermedio',
+    status: 'En préstamo',
+    imageUrl: 'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=800&auto=format&fit=crop&q=80',
+    description: 'Set de 5 piezas con cascos de álamo/caoba, herrajes dobles serie 830 y platos Sabian B8X para prácticas rítmicas.',
+    roomLocation: 'Cabina 005 - Insonorizada',
+    responsibleTeacher: TEACHERS_MOCK[3],
+    assignedStudent: STUDENTS_MOCK[1],
+  },
+  {
+    id: 'inst-5',
+    name: 'Violonchelo Stentor Student II',
+    family: 'Cuerda',
+    level: 'Iniciación',
+    status: 'Disponible',
+    imageUrl: 'https://images.unsplash.com/photo-1558556238-d7ee64df67aa?w=800&auto=format&fit=crop&q=80',
+    description: 'Cello calibrado en taller con puente Aubert y cordal Wittner con afinadores incorporados para máxima estabilidad tonal.',
+    roomLocation: 'Aula 104 - Cuerdas Frotadas',
+    responsibleTeacher: TEACHERS_MOCK[1],
+    assignedStudent: STUDENTS_MOCK[2],
+  },
+  {
+    id: 'inst-6',
+    name: 'Trompeta en Sib Bach Stradivarius',
+    family: 'Viento-Metal',
+    level: 'Profesional',
+    status: 'En mantenimiento',
+    imageUrl: 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&auto=format&fit=crop&q=80',
+    description: 'Campana de una pieza martillada a mano, pistones de monel y acabado plateado para proyección sinfónica.',
+    roomLocation: 'Taller de Luthería y Mantenimiento',
+    responsibleTeacher: TEACHERS_MOCK[2],
+  },
+];
