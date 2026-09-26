@@ -1,0 +1,11 @@
+# Ignorar dependencias de todas las semanas
+**/node_modules/
+**/.pnpm-store/
+
+# Ignorar archivos generados por Expo en todas las semanas
+**/.expo/
+**/dist/
+**/web-build/
+
+# Archivos de sistema
+.DS_Store
