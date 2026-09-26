@@ -9,17 +9,7 @@ Proyecto móvil desarrollado en **React Native**, **Expo SDK 57**, **React Navig
 La aplicación combina un **Bottom Tab Navigator** con un **Native Stack Navigator anidado**, sincronizado en tiempo real a través de un **Store global de Zustand** (`useSavedStore`). El estado de instrumentos guardados/favoritos se comparte de manera reactiva entre la pantalla de catálogo, la ficha técnica y la pestaña de guardados, sin recurrir a prop drilling.
 
 ```mermaid
-graph TD
-    Store[useSavedStore - Zustand Store] -->|savedCount badge en tiempo real| TabNav[Bottom Tab Navigator]
-    Store -->|isSaved / toggleItem| HomeScreen[HomeScreen - Catálogo con Buscador]
-    Store -->|isSaved / toggleItem| DetailScreen[DetailScreen - Ficha Técnica useRoute]
-    Store -->|savedItems / clearAll / removeItem| SavedScreen[SavedScreen - Lista de Guardados]
-    
-    TabNav -->|Tab 1: musical-notes| HomeStack[HomeStackNavigator]
-    TabNav -->|Tab 2: bookmark con Badge| SavedScreen
-    
-    HomeStack -->|Ruta Inicial| HomeScreen
-    HomeStack -->|navigation.navigate 'Detail', { instrument }| DetailScreen
+
 ```
 
 ### 1. Store Global con Zustand (`src/stores/savedStore.ts`)
